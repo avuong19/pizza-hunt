@@ -22,7 +22,7 @@ const commentController = {
       .catch(err => res.json(err));
   },
 //add reply
-aaddReply({ params, body }, res) {
+addReply({ params, body }, res) {
     Comment.findOneAndUpdate(
       { _id: params.commentId },
       { $push: { replies: body } },
